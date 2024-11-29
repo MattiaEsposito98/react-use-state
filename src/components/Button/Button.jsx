@@ -8,18 +8,21 @@ export default function Button() {
   const buttonSelected = (description) => {
     setSelectedLanguage(description)
   }
+
   return (
     <div>
       {
         languages.map((language) =>
-          <button onClick={() => buttonSelected(language.description)} className={style.button} key={language.id}>
+          <button onClick={() => buttonSelected(language.description)}
+            className={selectedLanguage === language.description ? `${style.button} ${style.buttonClicked}` : style.button} //Controllo sul tag selezionato
+            key={language.id}>
             {language.title}
           </button>
         )
       }
       <div className={style.container}>
         {selectedLanguage ? (
-          <p>{selectedLanguage}</p>
+          <p>{selectedLanguage}  </p>
         ) : (
           <p>Seleziona un linguaggio per vedere la descrizione.</p>
         )}
