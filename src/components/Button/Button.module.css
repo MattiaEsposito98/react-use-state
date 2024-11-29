@@ -10,3 +10,9 @@
 .button:hover {
   background-color: goldenrod;
 }
+
+.container {
+  border: 1px solid black;
+  margin-top: 2rem;
+  padding: 1rem;
+}
